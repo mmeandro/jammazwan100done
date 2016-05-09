@@ -1,0 +1,14 @@
+package abo;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AboRoutes extends RouteBuilder {
+
+    @Override
+    public void configure() throws Exception {
+    	from("file://../_json/?noop=true&fileName=zip.json")
+    }
+}

@@ -1,0 +1,7 @@
+package abo;
+
+import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
+
+public class NoRootJsonXstreamDriver extends JsonHierarchicalStreamDriver {
+
+}

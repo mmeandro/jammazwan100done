@@ -1,0 +1,31 @@
+package aap;
+
+import org.apache.camel.test.spring.CamelSpringTestSupport;
+import org.junit.Test;
+import org.springframework.context.support.AbstractXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import aai.domain.Car;
+import aai.domain.Mechanic;
+
+public class AapTest extends CamelSpringTestSupport {
+
+    @Override
+    protected AbstractXmlApplicationContext createApplicationContext() {
+		return new ClassPathXmlApplicationContext("META-INF/spring/camel-route.xml");
+	}
+
+	@Test
+	public void testOrderOk() throws Exception {
+		// Thread.sleep(200000000);
+		Car car = new Car();
+		car.setModel("Ford Mustang");
+		car.setYear("1966");
+		Mechanic mechanic = template.requestBody("cxf:bean:entryEndpoint", car, Mechanic.class);
+		assertTrue(mechanic.getTown().contains(car.getModel()));
+		// hah! Better put a sleep or JMS will not have time to do it's send!
+		Thread.sleep(1000);
+	}
+
+
+}

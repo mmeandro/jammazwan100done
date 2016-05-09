@@ -1,0 +1,31 @@
+package cab;
+
+import java.util.Date;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
+
+import cab.domain.Cart;
+import cab.domain.Result;
+
+public class CabRoutes extends RouteBuilder {
+	
+	
+	public void configure() throws Exception {
+
+		from("cxf:bean:entryEndpoint").process(new Processor() {
+            public void process(Exchange exchange) throws Exception {
+            	System.err.println("SOMETHING");
+        		Cart cart = exchange.getIn().getBody(Cart.class);
+        		Result result = new Result();
+        		result.setDate(""+ new Date());
+        		result.setName(cart.getName());
+        		result.setDesc("Resulting order of " + cart.getItem());
+        		exchange.getOut().setBody(result);
+        	}
+
+        });
+	}
+
+}

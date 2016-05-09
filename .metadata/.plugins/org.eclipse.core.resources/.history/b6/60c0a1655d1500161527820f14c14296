@@ -1,0 +1,53 @@
+package aap.domain;
+
+public class Cleaner {
+	private String name;
+	private String age;
+	private String health;
+	private String OCDness;
+
+	public Cleaner(String name is " +  + " and  age is " +  + " and  health is " +  + " and  oCDness) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.health = health;
+		OCDness = oCDness;
+	}
+	
+	public String toString(){
+		return "name is " + name + " and  age is " + age + " and  health is " + health + " and  oCDness is " + OCDness;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getHealth() {
+		return health;
+	}
+
+	public void setHealth(String health) {
+		this.health = health;
+	}
+
+	public String getOCDness() {
+		return OCDness;
+	}
+
+	public void setOCDness(String oCDness) {
+		OCDness = oCDness;
+	}
+
+}

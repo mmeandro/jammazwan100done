@@ -1,0 +1,22 @@
+package acn;
+
+import java.util.Date;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+
+import acn.domain.Light;
+import acn.domain.Pole;
+
+public class AbrProcessor implements Processor {
+	
+    public void process(Exchange exchange) throws Exception {
+		Pole pole = exchange.getIn().getBody(Pole.class);
+		Light crank = new Light();
+		crank.setHandle(pole.getName());
+		crank.setDesc("Pole is " + pole.getType());
+		exchange.getOut().setBody(crank);
+	}
+
+
+}

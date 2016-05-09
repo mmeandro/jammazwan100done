@@ -1,0 +1,8 @@
+package acv.domain;
+
+public class Tile {
+	private String color;
+	private String thickness;
+	private String weight;
+	private String dimensions;
+}

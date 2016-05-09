@@ -1,0 +1,26 @@
+package aao;
+
+import org.apache.camel.test.spring.CamelSpringTestSupport;
+import org.junit.Test;
+import org.springframework.context.support.AbstractXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import aao.domain.Duck;
+
+public class AaoTest extends CamelSpringTestSupport {
+
+	@Override
+	protected AbstractXmlApplicationContext createApplicationContext() {
+		return new ClassPathXmlApplicationContext("META-INF/spring/example.xml");
+	}
+
+	@Test
+	public void testHelloBean() throws Exception {
+		// Thread.sleep(5000000);
+		Duck duck = new Duck("webbed", "green", "28inch", "slightly hooked", "fast");
+		String reply = template.requestBody("direct:example", "Develop Example In Java First", String.class);
+		assertEquals("My Develop Example In Java First", reply);
+		Thread.sleep(1000);
+	}
+
+}

@@ -1,0 +1,10 @@
+package aai;
+import javax.jws.WebService;
+
+import aai.domain.Cushion;
+import aai.domain.Sofa;
+
+@WebService
+public interface AatService {
+	Cushion decorates(Sofa sofa);
+}

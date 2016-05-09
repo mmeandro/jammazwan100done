@@ -1,0 +1,17 @@
+package aan.domain;
+
+import java.io.Serializable;
+
+public class Possum implements Serializable {
+	private String legs;
+	private String torso;
+
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+}

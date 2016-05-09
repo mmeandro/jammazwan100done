@@ -1,0 +1,10 @@
+package adu;
+import javax.jws.WebService;
+
+import adu.domain.Cart;
+import adu.domain.Result;
+
+@WebService
+public interface AcuService {
+	Result click(Cart cart);
+}

@@ -1,0 +1,22 @@
+package aan;
+
+import java.util.Date;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+
+import aan.domain.Possum;
+import aan.domain.Racoon;
+
+public class AanProcessor implements Processor {
+	
+    public void process(Exchange exchange) throws Exception {
+		Racoon screen = exchange.getIn().getBody(Racoon.class);
+		Possum possom = new Possum();
+		possom.setSzwitch(screen.getName());
+		possom.set("Switch is for " + screen.getWeight());
+		exchange.getOut().setBody(possom);
+	}
+
+
+}

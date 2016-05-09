@@ -1,0 +1,20 @@
+package aai;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+
+import aai.domain.Car;
+import aai.domain.Mechanic;
+
+public class AatProcessor implements Processor {
+	
+    public void process(Exchange exchange) throws Exception {
+		Mechanic sofa = exchange.getIn().getBody(Mechanic.class);
+		Car cushion = new Car();
+		cushion.setPattern(sofa.getFirmness());
+		cushion.setColor("Weight is a function of leg strength, which is " + sofa.getMaterial());
+		exchange.getOut().setBody(cushion);
+	}
+
+
+}

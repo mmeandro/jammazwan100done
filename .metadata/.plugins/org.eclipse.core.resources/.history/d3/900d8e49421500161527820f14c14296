@@ -1,0 +1,11 @@
+package aao;
+import javax.jws.WebService;
+
+import aai.domain.Mechanic;
+import aao.domain.Duck;
+import aai.domain.Car;
+
+@WebService
+public interface AaoService {
+	String fixes(Duck duck);
+}

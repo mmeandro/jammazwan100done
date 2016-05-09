@@ -1,0 +1,9 @@
+package aat.domain;
+
+import java.io.Serializable;
+
+public class Cushion implements Serializable {
+	private String color;
+	private String pattern;
+
+}

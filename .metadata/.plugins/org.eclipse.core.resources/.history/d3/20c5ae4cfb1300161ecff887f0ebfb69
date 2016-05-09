@@ -1,0 +1,46 @@
+package caa;
+
+import java.util.Date;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
+
+import caa.domain.Cart;
+import caa.domain.Ticket;
+
+public class CaaRoutes extends RouteBuilder {
+	
+	
+	public void configure() throws Exception {
+
+		from("cxf:bean:entryEndpoint").recipientList("direct:click");
+
+		from("direct:click").process(new Processor() {
+            public void process(Exchange exchange) throws Exception {
+        		Cart cart = exchange.getIn().getBody(Cart.class);
+        		Ticket ticket = new Ticket();
+        		ticket.setDate(""+ new Date());
+        		ticket.setName(cart.getName());
+        		ticket.setDesc("Order for " + cart.getItem());
+        		exchange.getOut().setBody(ticket);
+        	}
+
+        });
+	}
+
+}
+/*
+ 
+		<route id="cxf">
+			<!-- route starts from the cxf webservice in POJO mode -->
+			<from id="_from1" uri="cxf:bean:entryEndpoint" />
+			<recipientList id="_recipientList1">
+				<simple>direct:${header.operationName}</simple>
+			</recipientList>
+		</route>
+		<route id="convert">
+			<from id="_from2" uri="direct:convert" />
+			<process id="_process1" ref="conversionProcessor" />
+		</route>
+ */

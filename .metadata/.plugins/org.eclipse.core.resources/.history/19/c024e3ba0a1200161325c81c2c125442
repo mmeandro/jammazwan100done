@@ -1,0 +1,21 @@
+package abo;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.Converter;
+import com.thoughtworks.xstream.converters.MarshallingContext;
+import com.thoughtworks.xstream.converters.UnmarshallingContext;
+import com.thoughtworks.xstream.io.HierarchicalStreamReader;
+import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
+import org.apache.camel.model.dataformat.XStreamDataFormat;
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AboRoutes extends RouteBuilder {
+    private static volatile boolean constructorInjected;
+    private static volatile boolean methodInjected;
+    @Override
+    public void configure() throws Exception {
+    	from("file://../_json/?noop=true&fileName=zip.json").log("DONE");
+    }
+}

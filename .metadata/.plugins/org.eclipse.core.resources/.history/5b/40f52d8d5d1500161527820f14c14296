@@ -1,0 +1,6 @@
+package aap;
+
+public interface AapService {
+	String mop(Cleaner cleaner);
+
+}

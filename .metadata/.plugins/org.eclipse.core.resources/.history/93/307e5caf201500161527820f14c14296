@@ -1,0 +1,10 @@
+package aao.domain;
+
+public class Duck {
+	private String feet;
+	private String color;
+	private String wingspan;
+	private String bill;
+	private String walk;
+
+}

@@ -1,0 +1,9 @@
+package adt;
+
+public class AdtProcessor {
+
+    public String answer(String text) {
+        return "My " + text;
+    }
+
+}

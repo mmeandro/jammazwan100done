@@ -1,0 +1,10 @@
+package acu;
+import javax.jws.WebService;
+
+import cab.domain.Cart;
+import cab.domain.Result;
+
+@WebService
+public interface CabService {
+	Result click(Cart cart);
+}

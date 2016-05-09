@@ -1,0 +1,10 @@
+package abr;
+import javax.jws.WebService;
+
+import abr.domain.Pole;
+import abr.domain.Tree;
+
+@WebService
+public interface AbkService {
+	Tree grows(Pole region);
+}

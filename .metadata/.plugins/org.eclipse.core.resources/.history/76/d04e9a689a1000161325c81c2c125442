@@ -1,0 +1,9 @@
+package adk;
+
+public class AdkProcessor {
+
+    public String answer(String text) {
+        return "My " + text;
+    }
+
+}

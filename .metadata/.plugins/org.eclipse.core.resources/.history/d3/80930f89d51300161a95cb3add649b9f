@@ -1,0 +1,26 @@
+package adr;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AdrRoutes extends RouteBuilder {
+
+    @Override
+    public void configure() throws Exception {
+        from("file://../_xml/?noop=true&fileName=menu.xml")
+        .process("adhProcessor").to("direct:two");
+        from("cxf:bean:entryEndpoint").recipientList("direct:${header.operationName}");
+        from("direct:click")
+            .process(new Processor() {
+                public void process(Exchange exchange) throws Exception {
+                    String text = exchange.getIn().getBody(String.class);
+                    System.out.println(">"+text);
+                }
+            }).process();
+    }
+}
+/*
+
+*/

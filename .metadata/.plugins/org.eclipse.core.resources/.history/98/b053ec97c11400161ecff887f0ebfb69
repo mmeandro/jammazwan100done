@@ -1,0 +1,10 @@
+package abv;
+import javax.jws.WebService;
+
+import abv.domain.Light;
+import abv.domain.Screen;
+
+@WebService
+public interface AcnService {
+	Light filters(Screen screen);
+}

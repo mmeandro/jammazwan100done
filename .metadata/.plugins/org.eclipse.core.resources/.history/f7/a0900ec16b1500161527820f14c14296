@@ -1,0 +1,6 @@
+package acv;
+
+public interface AcvService {
+	public String lay(Tile tile);
+
+}

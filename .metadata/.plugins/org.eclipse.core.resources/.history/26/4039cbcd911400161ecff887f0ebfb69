@@ -1,0 +1,10 @@
+package adu;
+import javax.jws.WebService;
+
+import adu.domain.Region;
+import adu.domain.Result;
+
+@WebService
+public interface AduService {
+	Result click(Region cart);
+}

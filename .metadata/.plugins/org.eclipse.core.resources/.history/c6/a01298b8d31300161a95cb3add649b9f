@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cxf="http://camel.apache.org/schema/blueprint/cxf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd              http://camel.apache.org/schema/blueprint/cxf http://camel.apache.org/schema/blueprint/cxf/camel-cxf.xsd              http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+	<cxf:cxfEndpoint id="entryEndpoint" address="http://localhost:9000/go/"
+		serviceClass="adr.domain.AdrService" />
+	<bean id="cxfProcessor" class="adr.CxfProcessor" />
+	<bean id="processorTwo" class="adr.ProcessorTwo" />
+	<bean id="route" class="adr.AdrRoutes" />
+
+	<camelContext id="adr" xmlns="http://camel.apache.org/schema/spring">
+		<routeBuilder ref="route" />
+	</camelContext>
+
+</beans>

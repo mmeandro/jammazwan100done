@@ -1,0 +1,9 @@
+package abv.domain;
+
+import java.io.Serializable;
+
+public class Foot implements Serializable{
+	private String weight;
+	private String size;
+
+}

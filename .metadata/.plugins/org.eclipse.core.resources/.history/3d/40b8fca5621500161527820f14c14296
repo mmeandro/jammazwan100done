@@ -1,0 +1,9 @@
+package abs.domain;
+
+public class Tube {
+	private String length;
+	private String thickness;
+	private String diameter;
+	private String material;
+
+}

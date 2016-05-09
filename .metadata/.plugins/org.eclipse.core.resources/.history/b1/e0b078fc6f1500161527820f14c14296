@@ -1,0 +1,41 @@
+package acw.domain;
+
+public class Buzzard {
+	private String age;
+	private String subspecies;
+	private String region;
+	private String wingspan;
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getSubspecies() {
+		return subspecies;
+	}
+
+	public void setSubspecies(String subspecies) {
+		this.subspecies = subspecies;
+	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getWingspan() {
+		return wingspan;
+	}
+
+	public void setWingspan(String wingspan) {
+		this.wingspan = wingspan;
+	}
+
+}

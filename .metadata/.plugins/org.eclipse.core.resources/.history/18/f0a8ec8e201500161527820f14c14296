@@ -1,0 +1,5 @@
+package aao.domain;
+
+public class Duck {
+
+}

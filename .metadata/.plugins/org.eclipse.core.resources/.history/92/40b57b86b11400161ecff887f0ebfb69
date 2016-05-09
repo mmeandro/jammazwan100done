@@ -1,0 +1,17 @@
+package abr.domain;
+
+import java.io.Serializable;
+
+public class Crank implements Serializable{
+	private String handle;
+	private String desc;
+
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+}

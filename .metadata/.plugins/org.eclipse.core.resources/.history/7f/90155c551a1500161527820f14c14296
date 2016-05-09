@@ -1,0 +1,20 @@
+package aai;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+
+import aai.domain.Mechanic;
+import aai.domain.Car;
+
+public class AaiProcessor implements Processor {
+	
+    public void process(Exchange exchange) throws Exception {
+		Car car = exchange.getIn().getBody(Car.class);
+		Mechanic mechanic = new Mechanic();
+		mechanic.setTown(car.getModel());
+		mechanic.setAge("22");
+		exchange.getOut().setBody(mechanic);
+	}
+
+
+}

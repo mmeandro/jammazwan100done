@@ -1,0 +1,9 @@
+package ado;
+
+public class AdoProcessor {
+
+    public String answer(String text) {
+        return "My " + text;
+    }
+
+}

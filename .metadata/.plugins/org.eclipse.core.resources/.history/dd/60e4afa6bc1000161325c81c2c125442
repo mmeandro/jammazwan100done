@@ -1,0 +1,8 @@
+package ads;
+
+import org.apache.camel.Processor;
+
+public class AdsProcessor implements Processor {
+
+
+}

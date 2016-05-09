@@ -1,0 +1,5 @@
+package aap;
+
+public interface AapService {
+
+}

@@ -1,0 +1,10 @@
+package acn;
+import javax.jws.WebService;
+
+import acn.domain.Light;
+import acn.domain.Pole;
+
+@WebService
+public interface AbrService {
+	Light turns(Pole region);
+}

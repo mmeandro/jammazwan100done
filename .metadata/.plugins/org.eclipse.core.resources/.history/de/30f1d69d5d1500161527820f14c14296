@@ -1,0 +1,9 @@
+package aap;
+
+public class AapProcessor implements Processor {
+
+    public String answer(String text) {
+        return "My " + text;
+    }
+
+}

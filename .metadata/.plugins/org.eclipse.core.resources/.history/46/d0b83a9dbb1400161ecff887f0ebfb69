@@ -1,0 +1,10 @@
+package aan;
+import javax.jws.WebService;
+
+import aan.domain.Light;
+import aan.domain.Screen;
+
+@WebService
+public interface AanServic {
+	Light filters(Screen screen);
+}

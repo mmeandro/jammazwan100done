@@ -1,0 +1,9 @@
+package abs;
+
+public class AbsProcessor {
+
+    public String answer(String text) {
+        return "My " + text;
+    }
+
+}

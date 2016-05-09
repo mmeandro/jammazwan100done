@@ -1,0 +1,10 @@
+package aat.domain;
+
+import java.io.Serializable;
+
+public class Sofa implements Serializable {
+	private String material;
+	private String firmness;
+
+
+}

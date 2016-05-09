@@ -1,0 +1,22 @@
+package abv;
+
+import java.util.Date;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+
+import abv.domain.Leg;
+import abv.domain.Foot;
+
+public class AbvProcessor implements Processor {
+	
+    public void process(Exchange exchange) throws Exception {
+		Foot screen = exchange.getIn().getBody(Foot.class);
+		Leg light = new Leg();
+		light.setSzwitch(screen.getName());
+		light.setDesc("Switch is for " + screen.getWeight());
+		exchange.getOut().setBody(light);
+	}
+
+
+}

@@ -1,0 +1,10 @@
+package cab;
+import javax.jws.WebService;
+
+import cab.domain.Cart;
+import cab.domain.Order;
+
+@WebService
+public interface CaaService {
+	Order click(Cart cart);
+}

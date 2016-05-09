@@ -1,0 +1,10 @@
+package acn;
+import javax.jws.WebService;
+
+import acn.domain.Crank;
+import acn.domain.Pole;
+
+@WebService
+public interface AbrService {
+	Crank turns(Pole region);
+}

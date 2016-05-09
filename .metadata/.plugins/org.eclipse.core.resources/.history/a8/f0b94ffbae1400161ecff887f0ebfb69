@@ -1,0 +1,10 @@
+package abr;
+import javax.jws.WebService;
+
+import abr.domain.Leaf;
+import abr.domain.Tree;
+
+@WebService
+public interface AbkService {
+	Tree grows(Leaf region);
+}

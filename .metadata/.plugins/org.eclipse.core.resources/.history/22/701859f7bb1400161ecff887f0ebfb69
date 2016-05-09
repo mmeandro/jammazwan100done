@@ -1,0 +1,17 @@
+package aan.domain;
+
+import java.io.Serializable;
+
+public class Racoon implements Serializable{
+	private String weight;
+	private String name;
+
+
+	public String getWeight() {
+		return weight;
+	}
+
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
+}

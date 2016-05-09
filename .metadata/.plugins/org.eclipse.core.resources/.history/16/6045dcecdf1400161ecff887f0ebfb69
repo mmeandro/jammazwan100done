@@ -1,0 +1,10 @@
+package aai;
+import javax.jws.WebService;
+
+import aai.domain.Car;
+import aai.domain.Mechanic;
+
+@WebService
+public interface AatService {
+	Car decorates(Mechanic sofa);
+}

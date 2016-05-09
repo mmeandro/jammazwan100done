@@ -1,0 +1,5 @@
+package ads.domain;
+
+public class Donut {
+
+}

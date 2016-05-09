@@ -1,0 +1,24 @@
+package adu;
+
+import java.util.Date;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+
+import adu.domain.Region;
+import adu.domain.Area;
+
+public class ProcessorTwo implements Processor {
+	
+    public void process(Exchange exchange) throws Exception {
+		Region cart = exchange.getIn().getBody(Region.class);
+		Area result = new Area();
+		result.setDate(""+ new Date());
+		result.setName("Bill");
+		result.setDesc("Resulting in an order of " + cart.getItem());
+		exchange.getOut().setBody(result);
+    	exchange.getOut().setHeader("CamelFileName", "acu_result.csv");
+	}
+
+
+}

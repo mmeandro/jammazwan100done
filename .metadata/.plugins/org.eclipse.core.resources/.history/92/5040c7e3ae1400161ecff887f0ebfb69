@@ -1,0 +1,10 @@
+package abk;
+import javax.jws.WebService;
+
+import abk.domain.Leaf;
+import abk.domain.Tree;
+
+@WebService
+public interface AbkService {
+	Tree grows(Leaf region);
+}

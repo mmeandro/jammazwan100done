@@ -1,0 +1,9 @@
+package aap.domain;
+
+public class Cleaner {
+	private String name;
+	private String age;
+	private String health;
+	private String OCDness;
+
+}

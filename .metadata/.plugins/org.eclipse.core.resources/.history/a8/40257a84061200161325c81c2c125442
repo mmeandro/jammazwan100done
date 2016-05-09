@@ -1,0 +1,12 @@
+package abo;
+
+import abo.domain.Zip;
+
+public class TryMe {
+
+	public static void main(String[] args) {
+		Zip zip = new Zip("78749", "12345", "23", "TX", "001");
+
+	}
+
+}

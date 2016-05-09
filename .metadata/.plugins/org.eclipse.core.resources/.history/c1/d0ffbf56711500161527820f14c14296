@@ -1,0 +1,12 @@
+package acw;
+
+import org.apache.camel.builder.RouteBuilder;
+
+public class AcwRoutes extends RouteBuilder {
+
+    @Override
+    public void configure() throws Exception {
+        from("cxf:bean:entryEndpoint")
+            .process("acwProcessor");
+    }
+}

@@ -1,0 +1,9 @@
+package ads.domain;
+
+public class Donut {
+	private String name;
+	private String desc;
+	private String grease;
+	private String sweetener;
+
+}

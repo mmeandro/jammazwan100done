@@ -1,0 +1,10 @@
+package caa;
+import javax.jws.WebService;
+
+import caa.domain.Cart;
+import caa.domain.Order;
+
+@WebService
+public interface AdrService {
+	Order click(Cart cart);
+}

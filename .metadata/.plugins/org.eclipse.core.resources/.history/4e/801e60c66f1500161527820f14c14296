@@ -1,0 +1,9 @@
+package acw.domain;
+
+public class Buzzard {
+	private String age;
+	private String subspecies;
+	private String region;
+	private String wingspan;
+	
+}

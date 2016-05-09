@@ -1,0 +1,5 @@
+package adr.domain;
+
+public class Cart {
+
+}

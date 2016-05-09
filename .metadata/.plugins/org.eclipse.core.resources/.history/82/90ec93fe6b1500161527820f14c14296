@@ -1,0 +1,40 @@
+package acv.domain;
+
+public class Tile {
+	private String color;
+	private String thickness;
+	private String weight;
+	private String dimensions;
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getThickness() {
+		return thickness;
+	}
+
+	public void setThickness(String thickness) {
+		this.thickness = thickness;
+	}
+
+	public String getWeight() {
+		return weight;
+	}
+
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
+
+	public String getDimensions() {
+		return dimensions;
+	}
+
+	public void setDimensions(String dimensions) {
+		this.dimensions = dimensions;
+	}
+}

@@ -1,0 +1,36 @@
+package adr;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class AdrRoutes extends RouteBuilder {
+
+    @Autowired
+    private CxfProcessor exampleBean;
+
+    @Override
+    public void configure() throws Exception {
+        from("cxf:bean:entryEndpoint").recipientList("direct:${header.operationName}");
+        from("direct:")
+            .process(new Processor() {
+                public void process(Exchange exchange) throws Exception {
+                    String text = exchange.getIn().getBody(String.class);
+                }
+            });
+    }
+}
+/*
+<route id="cxf">
+<!-- route starts from the cxf webservice in POJO mode -->
+<from id="_from1" uri="cxf:bean:entryEndpoint" />
+<recipientList id="_recipientList1">
+	<simple>direct:${header.operationName}</simple>
+</recipientList>
+</route>
+<route id="convert">
+<from id="_from2" uri="direct:convert" />
+<process id="_process1" ref="conversionProcessor" />
+</route>
+*/

@@ -1,0 +1,9 @@
+package acw;
+
+public class AcwProcessor {
+
+    public String answer(String text) {
+        return "My " + text;
+    }
+
+}

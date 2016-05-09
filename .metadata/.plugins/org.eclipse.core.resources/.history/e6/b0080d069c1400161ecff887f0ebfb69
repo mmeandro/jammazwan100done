@@ -1,0 +1,14 @@
+package adu;
+
+import org.apache.camel.builder.RouteBuilder;
+
+public class AduRoutes extends RouteBuilder {
+
+	public void configure() throws Exception {
+
+		from("cxf:bean:entryEndpoint").process("processorTwo");
+//		.wireTap("jms:two").process("aduProcessor");
+//		from("jms:two").to("file://../_test/");
+	}
+
+}

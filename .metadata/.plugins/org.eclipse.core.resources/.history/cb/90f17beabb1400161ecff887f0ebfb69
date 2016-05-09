@@ -1,0 +1,9 @@
+package aan.domain;
+
+import java.io.Serializable;
+
+public class Possum implements Serializable {
+	private String legs;
+	private String torso;
+
+}

@@ -1,0 +1,9 @@
+package abo;
+
+import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
+
+public class NoRootJsonXstreamDriver extends JsonHierarchicalStreamDriver {
+	public HierarchicalStreamWriter createWriter(Writer writer) {
+        return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE);
+    }
+}

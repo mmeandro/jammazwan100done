@@ -1,0 +1,21 @@
+package aat;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
+import aat.domain.Sofa;
+
+public class ProcessorTwo implements Processor {
+	
+    public void process(Exchange exchange) throws Exception {
+    	Sofa sofa = exchange.getIn().getBody(Sofa.class);
+		XmlMapper xmlMapper = new XmlMapper();
+		String xml = xmlMapper.writeValueAsString(leg);
+		exchange.getOut().setBody(xml);
+    	exchange.getOut().setHeader("CamelFileName", "aat_decorates.xml");
+	}
+
+
+}

@@ -1,0 +1,25 @@
+package acn.domain;
+
+import java.io.Serializable;
+
+public class Light implements Serializable {
+	private String szwitch;
+
+	public String getSzwitch() {
+		return szwitch;
+	}
+
+	public void setSzwitch(String szwitch) {
+		this.szwitch = szwitch;
+	}
+
+	private String desc;
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+}
