@@ -1,6 +1,0 @@
-package adr.domain;
-
-public class Cart {
-	private String item ;
-private String name;
-}

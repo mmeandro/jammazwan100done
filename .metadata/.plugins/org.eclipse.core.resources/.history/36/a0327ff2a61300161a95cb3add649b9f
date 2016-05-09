@@ -1,9 +1,0 @@
-package adr;
-
-public class CxfProcessor {
-
-    public String answer(String text) {
-        return "My " + text;
-    }
-
-}

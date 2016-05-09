@@ -1,5 +1,0 @@
-package adr.domain;
-
-public class Order {
-
-}
